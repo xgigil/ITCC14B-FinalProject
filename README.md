@@ -7,4 +7,11 @@ TEAM MEMBERS
 -- Loking, Gail Leanne N.
 -- Ricarte, Patrice Jessie P.
 
-Title: Equipment Borrow and Return API
+Project Title: Equipment Borrow and Return API
+
+Project Milestones:
+- Week 1 -
+- Patrice Jessie created the repository.
+- Group members; Gaston, Durano, and Loking was added as the collaborators.
+- Group members forked the repository.
+- Updated the README.md file description.
