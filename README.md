@@ -4,7 +4,7 @@
 <br/>
 Note: **GitHub Profile/name be must your full name or family name for grading** 
 1. [Jose Rizal](https://github.com/jrizal)
-2. [Juan Luna](https://github.com/Juanluna10)
+2. [Myrtle Gaston](https://github.com/myrtlegaston)
 3. [Juan Dela Cruz](https://github.com/sadmann7)
 4. [Patrice Jessie Ricarte](https://github.com/pjricarte)
 
