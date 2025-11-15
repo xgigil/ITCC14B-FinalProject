@@ -1,0 +1,303 @@
+openapi: 3.0.3
+info:
+  title: Equipment Borrow and Return API
+  description: API for managing equipment inventory, borrowing, and return transactions for academic departments.
+  version: "1.0.0"
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+tags:
+  - name: Items
+  - name: Users
+  - name: Borrow
+  - name: Returns
+  - name: Transactions
+
+paths:
+  /items:
+    get:
+      tags: [Items]
+      summary: List all equipment items
+      responses:
+        "200":
+          description: List of all items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Item"
+
+    post:
+      tags: [Items]
+      summary: Add a new equipment item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ItemCreate"
+      responses:
+        "201":
+          description: Item successfully created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        "400":
+          description: Invalid input
+
+  /items/{item_id}:
+    get:
+      tags: [Items]
+      summary: Get an item by ID
+      parameters:
+        - in: path
+          name: item_id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Item found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        "404":
+          description: Item not found
+
+    patch:
+      tags: [Items]
+      summary: Update item details
+      parameters:
+        - in: path
+          name: item_id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ItemUpdate"
+      responses:
+        "200":
+          description: Item updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        "404":
+          description: Item not found
+
+    delete:
+      tags: [Items]
+      summary: Delete an item
+      parameters:
+        - in: path
+          name: item_id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Item deleted
+        "404":
+          description: Item not found
+
+  /users:
+    post:
+      tags: [Users]
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserCreate"
+      responses:
+        "201":
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid input
+
+    get:
+      tags: [Users]
+      summary: List all registered users
+      responses:
+        "200":
+          description: User list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+
+  /borrow:
+    post:
+      tags: [Borrow]
+      summary: Borrow an equipment item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BorrowRequest"
+      responses:
+        "201":
+          description: Borrow transaction created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+        "400":
+          description: Invalid request or item already borrowed
+        "404":
+          description: User or item not found
+
+  /returns:
+    post:
+      tags: [Returns]
+      summary: Return a borrowed item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReturnRequest"
+      responses:
+        "200":
+          description: Item successfully returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+        "400":
+          description: Item is not currently borrowed
+        "404":
+          description: Transaction or item not found
+
+  /transactions:
+    get:
+      tags: [Transactions]
+      summary: List all borrow/return transactions
+      responses:
+        "200":
+          description: Transaction list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Transaction"
+
+components:
+  schemas:
+
+    # -------- ITEMS --------
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+        status:
+          type: string
+          enum: [available, borrowed]
+        condition:
+          type: string
+        created_at:
+          type: string
+      required: [id, name, status]
+
+    ItemCreate:
+      type: object
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+        condition:
+          type: string
+      required: [name]
+
+    ItemUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+        condition:
+          type: string
+        status:
+          type: string
+          enum: [available, borrowed]
+
+    # -------- USERS --------
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        fullname:
+          type: string
+        email:
+          type: string
+      required: [id, fullname, email]
+
+    UserCreate:
+      type: object
+      properties:
+        fullname:
+          type: string
+        email:
+          type: string
+      required: [fullname, email]
+
+    # -------- BORROW --------
+    BorrowRequest:
+      type: object
+      properties:
+        user_id:
+          type: string
+        item_id:
+          type: string
+      required: [user_id, item_id]
+
+    ReturnRequest:
+      type: object
+      properties:
+        item_id:
+          type: string
+      required: [item_id]
+
+    # -------- TRANSACTIONS --------
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: string
+        user_id:
+          type: string
+        item_id:
+          type: string
+        action:
+          type: string
+          enum: [borrow, return]
+        timestamp:
+          type: string
+      required: [id, user_id, item_id, action]
+
