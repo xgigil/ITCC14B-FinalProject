@@ -8,23 +8,27 @@ Note: **GitHub Profile/name be must your full name or family name for grading**
 3. [Gail Loking](https://github.com/xgigil) 
 4. [Patrice Jessie Ricarte](https://github.com/pjricarte)
 
-### Milestone 1 (Nov Week 1): Project Proposal & Introduction
+### Milestone 1 (Nov Week 1): Project Setup & Initial Proposal
 
 - **What we'll do:**
-  - Finalize our project topic, define our core problem, and outline our data models (Users, Items).
-  - Complete the initial project proposal document (Chapters 1 & 2).
-  - Create the first draft of our API documentation by listing the planned endpoints.
+  - Write the initial project description and problem statement.
+  - Draft basic data models (Users, Items, Borrow Records).
+  - Set up the GitHub repository and add team collaborators.
+  - Fork repositories for individual development.
+  - Finalize the project topic: Equipment Borrow and Return API.
 - **Deliverables:**
-  - An updated `README.md` file with a "Problem Statement" and "Data Models" section.
-  - A completed `ITCC14 Final Project Doc` (Chapters 1 & 2).
+  - GitHub repository created with collaborators.
+  - Updated README.md with Problem Statement, Needs Analysis, and Data Models.
   - An initial `api.yaml` file (or Postman collection) that lists all planned endpoints (e.g., `/users`, `/items`).
+  - Initial project proposal (Chapters 1 & 2).
 - **Checklist:**
-  - [ ] Hold team meeting to finalize topic
-  - [ ] Write "Problem Statement" in `README.md`
-  - [ ] Define fields for "User" and "Item" models
-  - [ ] Write "Data Models" section in `README.md`
-  - [ ] Complete Chapter 1 of `ITCC14 Doc`
-  - [ ] Complete Chapter 2 of `ITCC14 Doc`
+  - [ ] Patrice Jessie Ricarte created repo
+  - [ ] Added collaborators (Gaston, Durano, Loking)
+  - [ ] Members forked repository
+  - [ ] Updated README.md
+  - [ ] Wrote project intro + problem + solution
+  - [ ] Added Data Models draft
+  - [ ] Completed Chapters 1 & 2
   - [ ] Create `api.yaml` and add endpoints
   - [ ] Commit and push all files to GitHub
 
