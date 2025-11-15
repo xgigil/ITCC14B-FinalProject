@@ -21,7 +21,7 @@ Note: **GitHub Profile/name be must your full name or family name for grading**
   - Updated README.md with Problem Statement, Needs Analysis, and Data Models.
   - An initial `api.yaml` file (or Postman collection) that lists all planned endpoints (e.g., `/users`, `/items`).
 - **Checklist:**
-  - [ j] Patrice Jessie Ricarte created repo
+  - [ ] Patrice Jessie Ricarte created repo
   - [ ] Added collaborators (Gaston, Durano, Loking)
   - [ ] Members forked repository
   - [ ] Updated README.md
