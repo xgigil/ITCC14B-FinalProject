@@ -18,22 +18,22 @@ Note: **GitHub Profile/name be must your full name or family name for grading**
     
 **Data Models**: It has three main models including the **users table** which stores an integer ID as the primary key, along with the name, email, and role as strings, the **items table** which also uses an integer ID as its primary key and includes name, category, status, and description as strings, the **borrowrecords table** which tracks a borrowing event with an integer ID as the primary key and user_id and item_id as foreign keys which links to the users and items table. It also records the date_borrowed, date_returned, and status indicating whether the item is currently "Borrowed" or has been "Returned".
     
-  - Set up the GitHub repository and add team collaborators.
-  - Fork repositories for individual development.
-  - Finalize the project topic: Equipment Borrow and Return API.
+  - Set up the GitHub repository and add team collaborators. [STATUS: DONE]
+  - Fork repositories for individual development. [STATUS: DONE]
+  - Finalize the project topic: Equipment Borrow and Return API. [STATUS: DONE]
 - **Deliverables:**
-  - GitHub repository created with collaborators.
-  - Updated README.md with Problem Statement, Needs Analysis, and Data Models.
-  - An initial `api.yaml` file (or Postman collection) that lists all planned endpoints (e.g., `/users`, `/items`).
+  - GitHub repository created with collaborators. [STATUS: DONE]
+  - Updated README.md with Problem Statement, Needs Analysis, and Data Models. [STATUS: DONE]
+  - An initial `api.yaml` file (or Postman collection) that lists all planned endpoints (e.g., `/users`, `/items`). [STATUS: DONE]
 - **Checklist:**
-  - [ ] Patrice Jessie Ricarte created repo
-  - [ ] Added collaborators (Gaston, Durano, Loking)
-  - [ ] Members forked repository
-  - [ ] Updated README.md
-  - [ ] Wrote project intro + problem + solution
-  - [ ] Added Data Models draft
-  - [ ] Create `api.yaml` and add endpoints
-  - [ ] Commit and push all files to GitHub
+  - [/] Patrice Jessie Ricarte created repo
+  - [/] Added collaborators (Gaston, Durano, Loking)
+  - [/] Members forked repository
+  - [/] Updated README.md
+  - [/] Wrote project intro + problem + solution
+  - [/] Added Data Models draft
+  - [/] Create `api.yaml` and add endpoints
+  - [/] Commit and push all files to GitHub
 
 ### Milestone 2 (Nov Week 2): API Foundation & Basic Documentation
 
