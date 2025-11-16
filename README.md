@@ -10,47 +10,19 @@ Note: **GitHub Profile/name be must your full name or family name for grading**
 
 ### Milestone 1 (Nov Week 1): Project Setup & Initial Proposal
 
-1. Project Description
+**Project Description**
      The Equipment Borrow and Return API is a system that tracks equipment loans in academic departments. It replaces manual logs by managing equipment availability, borrower information, and loan history.
    
-1.1 Problem Statement
+**Problem Statement**
      Academic offices still use paper logs for equipment lending, causing problems like lost or wrong records, unclear item availability, and no central history. Manual logs lead to errors and poor accountability.
 
-1.2 Solution
+**Solution**
     An API is needed to track borrowers and their borrowing history, show equipment availability, and store borrowing and return logs. 
-    Its CORE FEATURES are:
-    - Add Equipment
-    - List Equipment
-    - Track Borrowing
-    - Record Returns
-    - Store Users
-    - Maintain Item Status (Available, Borrowed, Returned) 
-    Its CORE ENDPOINTS are:
-    a. /items (GET) - List all equipment.
-    b. /items/add (POST) - Add new equipment.
-    c. /borrow (POST) - Submit borrow request.
-    d. /returns (POST) - Mark item as returned.
-    e. /users (GET) - List all users.
+    Its CORE FEATURES are Add Equipment, List Equipment, Track Borrowing, Record Returns, Store Users, Maintain Item Status (Available, Borrowed, Returned).
+    Its CORE ENDPOINTS are **/items** (GET) which lists all equipments, **/items/add** (POST) which adds new equipment, **/borrow** (POST) which submits borrow request, **/returns** (POST) which marks item as returned, and **/users** (GET) which lists all users.
     
 1.3 Data Models (Draft)
-    Users Table
-      id: Integer (Primary Key)
-      name: String
-      email: String
-      role: String
-    Items Table
-      id: Integer (Primary Key)
-      name: String
-      category: String
-      status: String ("Available" or "Borrowed)
-      description: String
-    BorrowRecords Table
-      id: Integer (Primary Key)
-      user_id: Integer (Foreign Key)
-      item_id: Integer (Foreign Key)
-      date_borrowed: Date
-      date_returned: Date (Nullable)
-      status: String ("Borrowed", "Returned)
+    It has three main models including the **users table** which stores an integer ID as the primary key, along with the name, email, and role as strings, the **items table** which also uses an integer ID as its primary key and includes name, category, status, and description as strings, the **borrowrecords table** which tracks a borrowing event with an integer ID as the primary key and user_id and item_id as foreign keys which links to the users and items table. It also records the date_borrowed, date_returned, and status indicating whether the item is currently "Borrowed" or has been "Returned".
     
   - Set up the GitHub repository and add team collaborators.
   - Fork repositories for individual development.
