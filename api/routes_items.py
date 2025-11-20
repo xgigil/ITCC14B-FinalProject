@@ -16,6 +16,7 @@ def add_item():
     new_item = Item(
         name=data["name"],
         category=data["category"],
+        amount=data.get("amount", 1),
         description=data.get("description", "")
     )
 
