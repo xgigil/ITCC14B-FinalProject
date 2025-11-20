@@ -49,7 +49,7 @@ paths:
         "400":
           description: Invalid input
 
-  /items/{item_id}:
+  /items/<int:item_id>:
     get:
       tags: [Items]
       summary: Get an item by ID
